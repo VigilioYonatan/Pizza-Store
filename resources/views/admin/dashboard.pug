@@ -1,0 +1,53 @@
+extends ./components/adminLayout.pug
+include ./components/breadCrumb.pug
+include ./components/cardOne.pug
+block content
+    +breadCrumb(breadcrumb)
+    div(class="flex flex-col lg:flex-row  gap-4")
+        div(class="lg:w-[75%] flex flex-col gap-4")
+            div(class="flex flex-wrap justify-center  gap-4")
+                +cardOne(users)
+                +cardOne(products)
+                //- +cardOne             
+            div(class="flex gap-4")
+                div(class="w-full bg-white col-span-3  p-4 rounded-md")
+                    div
+                        p(class="font-semibold capitalize") Document
+                    div
+                        p 146.000
+                    footer 
+                        p 17%
+                        p Since last week
+                div(class="w-full bg-white col-span-3  p-4 rounded-md")
+                    div
+                        p(class="font-semibold capitalize") Document
+                    div
+                        p 146.000
+                    footer 
+                        p 17%
+                        p Since last week
+            div(class="w-full bg-white col-span-3  p-4 rounded-md")
+                div
+                    p(class="font-semibold capitalize") Document
+                div
+                    p 146.000
+                footer 
+                    p 17%
+                    p Since last week
+        div(class="w-full lg:w-[25%]")
+            div(class="flex flex-col flex-wrap")
+                each list in recentsList
+                    div(class="bg-white col-span-3  p-4 rounded-md")
+                        div
+                            p(class="font-semibold capitalize mb-2")=list.title
+                                div( class="flex flex-col gap-2" )
+                                    each mini in list.list
+                                        div( class="flex items-center  gap-2")
+                                            div( class="bg-[#041737] rounded-full overflow-hidden flex justify-center items-center w-[50px] h-[50px]") 
+                                                if mini.foto
+                                                    img( src=mini.foto width="60" height="60")
+                                                else
+                                                    p( class="text-white font-semibold" )=mini.name[0]
+                                            div
+                                                p(class="font-semibold")=mini.name
+                                                p( class="text-sm" )=formatDate(mini.createdAt)

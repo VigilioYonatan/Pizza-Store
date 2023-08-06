@@ -1,0 +1,77 @@
+extends ./components/webLayout.pug
+block content
+    if successMessage.length
+        div(class="dark:text-secondary-light flex justify-center items-center gap-4 text-secondary-dark dark:bg-background-dark bg-background-light z-[99]  p-4 rounded-md fixed top-32 right-12 text-center animation-delay")
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+            </svg>
+            p(class="text-white")=successMessage
+    if errorMessage.length
+        div(class="flex justify-center items-center gap-4 text-secondary-dark bg-danger p-4 z-[99] rounded-md fixed top-32 right-12 text-center animation-delay")
+            p(class="text-white")=errorMessage
+    section(class="relative bg-[url('/img/pizza-bg.jpg')] bg-cover bg-center w-full h-[600px] md:h-[800px] ")
+        img( src="/img/banner.png" width="1200" class="absolute top-0 left-0  right-0 bottom-0 w-full h-full object-cover object-center" alt="background-pizza" height="720" )
+        div(class="container mx-auto flex items-center h-full")
+            div( class="w-[600px] relative z-10 flex flex-col gap-8 px-4 sm:px-6")
+                p( class="text-lg text-primary font-semibold") HAPPY HOUR SPECIAL
+                p( class="text-6xl sm:text-8xl font-semibold text-white") Pizza for 
+                    | <span class="text-primary">Everyone!</span>
+                p( class="text-white sm:text-xl" ) Extra-virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives,black olives, fresh tomatoes.
+                a( href="/" class="bg-primary py-3 px-10 self-start text-white rounded-md") Order Now
+    section(class="h-[600px] my-8 px-4 lg:my-0 relative lg:-top-28 lg:z-10 top-0 grid grid-cols-2  sm:grid-rows-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto")
+        div(class="relative lg:row-span-2  flex justify-center items-center rounded-md overflow-hidden")
+            img( alt="offer1" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/1.png" class="absolute top-0 bottom-0 left-0 right-0 -z-10 h-full w-full object-cover" width="300" height="300" )
+            button( aria-label="boton"  role="button" class="bg-primary py-2 px-8  text-white rounded-md") Order now
+        div(class="relative lg:row-span-1 px-4 flex flex-col gap-3 justify-center items-start  overflow-hidden rounded-md")
+            img( alt="offer2" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/banner-2.jpg" class="absolute top-0 bottom-0 left-0 right-0 -z-10 h-full w-full object-cover" width="300" height="300" )
+            p(class="text-primary text-3xl font-medium") Special 
+                | <span class="text-white">Combo</span>
+            p(class="text-white text-lg  font-semibold") This Combo For Online Order On Today
+            button( aria-label="boton"  role="button" class="bg-primary py-2 px-8 text-white rounded-md") Order now
+        div(class="relative lg:row-span-2 flex justify-center lg:justify-start items-center  flex-col gap-4  px-4 text-center overflow-hidden rounded-md")
+            img( alt="offer3" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/2.png" class="absolute top-0 bottom-0 left-0 right-0 -z-10 h-full w-full object-cover" width="300" height="300" )
+            p(class="text-white text-md font-semibold lg:mt-44") This campaign applies to the first 50 customers
+            button( aria-label="boton"  role="button" class="bg-primary py-2 px-8 text-white rounded-md") Order now
+        div(class="relative lg:row-span-1 flex flex-col justify-center items-start px-4 gap-3 rounded-md overflow-hidden")
+            img( alt="offer4" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/banner-3-1.jpg" class="absolute top-0 bottom-0 left-0 right-0 -z-10 h-full w-full object-cover" width="300" height="300" )
+            p(class="text-primary text-3xl font-medium") New 
+                | <span class="text-white">Recipe</span>
+            p(class="text-white text-lg  font-semibold") This Combo For Online Order On Toda
+            button( aria-label="boton"  role="button" class="bg-primary py-2 px-8  text-white rounded-md") Order now
+    section( class="container mx-auto px-4  flex flex-col gap-6" )
+        h2( class="text-3xl lg:text-5xl text-center font-semibold dark:text-secondary-light text-secondary-dark") Specials Offer
+        p( class="text-md lg:text-xl lg:w-1/2 text-gray mx-auto text-center") Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        div( class="flex gap-6 flex-wrap items-center justify-center" )
+            each product in productLatest
+                div( class="p-3 rounded-md overflow-hidden border border-gray-300 flex-1 max-w-[280px] min-w-[200px] lg:max-w-[350px] lg:min-w-[300px]" )
+                    picture( class="relative w-full ")
+                        img( class="w-full rounded-md h-full object-cover" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/22-300x330.jpg" alt="card" width="300" height="300" )
+                        .vue-app
+                            product-favorite-button( :product={id:product.id} )
+                    div( class="flex flex-col gap-2 lg:gap-4 my-3" )
+                        span( class="text-md lg:text-lg font-semibold dark:text-secondary-light text-secondary-dark" )=product.name
+                        p( class="text-gray text-sm lg:text-base  text-lines-3" )=product.description
+                        div
+                            span( class="text-white text-md lg:text-xl font-semibold" )=product.price
+                            .vue-app
+    section(class="flex items-center flex-wrap justify-center gap-6 my-2 py-16")
+        - for (let num = 1; num <= 4; num++)
+            div(class="flex gap-4 justify-center items-center")
+                img(class="object-cover" alt="img-1" src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/motorcycle.png" width="70" height="60")
+                div(class="flex flex-col gap-2")
+                    span(class="font-semibold text-xl dark:text-secondary-light text-secondary-dark") Free Shipping
+                    p(class="dark:text-secondary-light") Sign up for updates and get free shipping
+    section( class="bg-[url(https://demo-53.woovinapro.com/wp-content/uploads/2020/11/3.jpg)] py-28 bg-center" )
+        div( class="container mx-auto flex justify-around" )
+            div
+                img( src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/vector4-h3.png" alt="50%" width="150" height="150")
+            div( class="flex flex-col gap-3 justify-center items-center" )
+                img( src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/Fast-Food.png" class="w-[200px] lg:w-[550px]" width="1000" height="300" alt="this is a title")
+                p( class="dark:text-secondary-light text-secondary-dark lg:text-xl text-center" ) You are feeling hungry! Let order your favorite food.
+                div( class="flex justify-center gap-4" )
+                    button( class="bg-primary px-6 py-2 text-white font-semibold" )  Order now
+                    button( class="border px-6 py-2 dark:text-secondary-light font-semibold text-secondary-dark" )  Read More
+    
+
+
+    

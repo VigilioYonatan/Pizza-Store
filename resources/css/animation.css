@@ -1,0 +1,15 @@
+.animation-delay {
+    opacity: 0;
+    animation: animationDelay 6s;
+}
+@keyframes animationDelay {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

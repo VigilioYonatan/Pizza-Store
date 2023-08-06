@@ -1,0 +1,11 @@
+@layer utilities {
+    .delay-1 {
+        transition: all 0.3s ease;
+    }
+    .text-lines-3{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; 
+        overflow: hidden;
+    }
+}

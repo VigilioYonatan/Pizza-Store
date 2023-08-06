@@ -1,0 +1,18 @@
+extends ../web/components/WebLayout.pug
+block content
+    section( class="h-screen py-6 mt-24 container mx-auto")
+            img( width="1000" height="400" alt="wallpaper user" src="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-thumb.jpg" class="w-full h-[250px] lg:h-[350px] object-cover rounded-md" )
+            div(class="relative -top-6 lg:-top-16 dark:bg-paper-dark p-4 rounded-md w-[250px] mx-auto flex flex-col justify-center items-center gap-2")
+                div( class="bg-primary w-[100px] h-[100px] flex justify-center items-center rounded-full overflow-hidden" )
+                    if user.foto
+                        img( src=user.foto class="w-full h-full object-cover" alt=user.name )
+                    else
+                        p( class="text-4xl text-white ")=user.name[0] 
+                span(class="text-xl text-white")=user.name
+            div(class="dark:bg-paper-dark p-4 rounded-md")
+                div(class="flex gap-4 items-center ")
+                    button( class="text-white capitalize text-sm" ) Información
+                    button( class="text-white capitalize text-sm" ) Amigos
+                    button( class="text-white capitalize text-sm" ) Fotos
+                div 
+                    

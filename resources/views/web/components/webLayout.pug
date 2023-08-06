@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="pagina web creado con @vigilio/express")
+        link( rel="icon" href=route("/img/logo.png") type="image/png" )
+        title Pizza
+        !=vite
+    body(class=" dark:bg-background-dark bg-background-light")
+        #teleport
+        header(class=`bg-opacity-80 ${isActive('/') ? '':'bg-paper-dark'}  fixed z-[99] top-0 right-0 left-0 px-2` id="header")
+            div(class="mx-auto container flex items-center justify-between py-8")
+                h1(class="text-white text-3xl font-bold")
+                    a(href=route('/')) LOGO
+                div(class="vue-app flex items-center justify-center lg:hidden")
+                    header-hamburguer
+                nav(class="hidden lg:flex items-center justify-center gap-6" id="navbar")
+                    each web in webUris
+                        div(class="")
+                            a(href=route(web.uri) class=` tracking-wider ${isActive(web.uri) ? 'text-primary  font-semibold':'text-white hover:text-primary'}`) #{web.title} 
+
+                //- vue-app
+                div(class="vue-app flex items-center gap-4")
+                    header-icos( :user=JSON.stringify($user) )
+        block content
+        footer(class="bg-secondary")
+            div(class="container mx-auto px-4")
+                div(class="flex items-center gap-4 py-6 justify-between")
+                    div(class="flex gap-4 items-center")
+                        img(src="https://demo-53.woovinapro.com/wp-content/uploads/2020/11/love-letter.png" alt="love" width="60" height="60")
+                        div(class="flex flex-col justify-center")
+                            span(class="text-3xl text-white font-semibold") Newsletter
+                            p(class="text-white") For our newsletter & get a 10% off bill offers
+                    div
+                    div
+                div(class="py-6 flex justify-center lg:justify-between items-center gap-8 flex-wrap")
+                    ul(class="flex flex-col gap-3 justify-center")
+                        li(class="text-white text-2xl font-semibold mb-2 text-center") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                    ul(class="flex flex-col gap-2 justify-center")
+                        li(class="text-white text-2xl font-semibold mb-2 text-center") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                    ul(class="flex flex-col gap-2 justify-center")
+                        li(class="text-white text-2xl font-semibold mb-2 text-center") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                    ul(class="flex flex-col gap-2 justify-center")
+                        li(class="text-white text-2xl font-semibold mb-2 text-center") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                    ul(class="flex flex-col gap-2 justify-center")
+                        li(class="text-white text-2xl font-semibold mb-2 text-center") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info
+                        li(class="text-secondary-light text-sm") Company Info       
+                div(class="py-4")
+                    p(class="text-white text-center") © Copyright 2023 - #{new Date().getFullYear()} 
+                        | <b >Vigilio</b> - All Rights Reserved - Powered by WooVina Theme
+                    div

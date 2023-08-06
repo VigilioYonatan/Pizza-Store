@@ -1,0 +1,12 @@
+mixin cardOne(props)
+    div(class="flex-1 min-w-[200px]  flex flex-col gap-4 bg-white col-span-3  p-4 rounded-md")
+        div(class="flex justify-between")
+            p(class="font-semibold capitalize")=props.title
+            div(class="p-2  rounded-full bg-primary  bg-opacity-20")
+                !=props.icon("text-primary h-6 w-6")
+        div
+            p(class="text-2xl font-bold")=props.total
+        footer(class="flex items-center  justify-between gap-6") 
+            div(class="flex items-center")
+                p(class="text-success") 17%
+            p(class="text-gray") Since last week
